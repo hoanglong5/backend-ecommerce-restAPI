@@ -29,7 +29,7 @@ public class Address {
     private String district;
     @Column(name = "city")
     private String city;
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(fetch = FetchType.LAZY)
     @JsonBackReference
     @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "fk_user_id"))
     private List<Customer> customers ;

@@ -17,13 +17,9 @@ import java.util.Optional;
 public interface CustomerMapper {
     CustomerMapper INSTANCE = Mappers.getMapper(CustomerMapper.class);
 
-    List<CustomerDto> convertToCustomerDtoList(List<Customer> customerList);
     CustomerDto convertToCustomerDto(Customer customer);
-
-    CustomerDto convertToCustomerDtoFindID(Optional<Customer> customer);
 
     Customer convertToCustomer(CustomerDto customerDto);
 
     Customer convertToCustomerFromCustomerSave(CustomerSaveDto customerSaveDto);
-    List<Customer> convertToCustomerList(List<CustomerDto> customerDtos);
 }

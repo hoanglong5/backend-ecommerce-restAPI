@@ -4,9 +4,10 @@ package com.hoanglong.backendecommercerestapi.user.entity;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.*;
 
@@ -23,6 +24,7 @@ public class Customer {
     private String emailAddress;
     @Column(name = "phone_number")
     private String phoneNumber;
+    @DateTimeFormat(pattern = "dd/mm/yyyy")
     @Column(name = "dob")
     private Date dob;
     @Column(name = "first_name")

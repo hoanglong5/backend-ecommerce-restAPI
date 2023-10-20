@@ -1,4 +1,4 @@
-package com.hoanglong.backendecommercerestapi.user.service;
+package com.hoanglong.backendecommercerestapi.user.service.entityservice;
 
 import com.hoanglong.backendecommercerestapi.user.entity.Address;
 import com.hoanglong.backendecommercerestapi.user.repository.AddressRepository;
@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class AddressService {
+public class AddressEntityService {
     private final AddressRepository addressRepository;
     public List<Address> findAllAddress(){
         return addressRepository.findAll();
@@ -27,7 +27,8 @@ public class AddressService {
         return addressRepository.findById(id);
     }
 
-    public void DeleteListAddress(List<Long> addressList){
-         addressRepository.deleteAllById(addressList);
+    public boolean ExistById(Long id){
+        return addressRepository.existsById(id);
     }
+
 }
